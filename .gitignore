@@ -1,1 +1,4 @@
 .terraform*
+_*
+kubeconfig.yaml
+logs

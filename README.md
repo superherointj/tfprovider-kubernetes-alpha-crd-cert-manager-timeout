@@ -13,17 +13,21 @@ $ git clone https://github.com/superherointj/tfprovider-kubernetes-alpha-crd-cer
 
 $ cd tfprovider-kubernetes-alpha-crd-cert-manager-timeout
 
-* set your Terraform Cloud organization & workspace at `main.tf`
+* set Terraform credentials token for CLI tool.
 
-* `linode_token` variable must be set.
+* replace Terraform Cloud organization & workspace at `main.tf` to yours.
 
-$ terraform init
+* set `linode_token` either locally as environment variable or remotely at Terraform Cloud.
 
-$ terraform apply -target linode_lke_cluster.timeout_demo_lke
+$ export TF_LOG=TRACE; export TF_LOG_PATH=tf-timeout-demo.log
 
-$ terraform output kubeconfig | sed -e 's/^"//' -e 's/"$//' | base64 -d > kubeconfig.yaml
+$ TF_LOG_PATH=tf-init.log terraform init
 
-$ terraform apply
+$ TF_LOG_PATH=tf-lke_cluster.log terraform apply -target linode_lke_cluster.timeout_demo_lke
+
+$ TF_LOG_PATH=tf-kubeconfig.log terraform output kubeconfig | sed -e 's/^"//' -e 's/"$//' | base64 -d > kubeconfig.yaml
+
+$ TF_LOG_PATH=tf-apply.log terraform apply
 ```
 
 ## After some minutes...
@@ -83,3 +87,8 @@ https://registry.terraform.io/modules/aareet/cert-manager/kubernetes/latest
 * Kubernetes version: v1.20.4
 * Terraform Cloud: Yes.
 * Linode: 1.16.0
+
+## Questions
+
+--
+Thanks.
