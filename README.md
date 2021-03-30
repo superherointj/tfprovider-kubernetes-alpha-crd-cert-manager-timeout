@@ -16,7 +16,9 @@ $ cd tfprovider-kubernetes-alpha-crd-cert-manager-timeout
 $ create '.env' file to store variables. Like:
 ```
 TF_TOKEN=your_terraform_token
+
 TF_ORGANIZATION=company
+
 linode_token=your_linode_token
 ```
 
@@ -27,13 +29,16 @@ Pick method:
 * Install terraform v0.14.8.
 
 $ ./bootstrap.sh
+
 # Logs at ./logs/local/
 ```
 
 2) Docker:
 ```
 $ make
+
 $ make get-logs
+
 # Logs at ./logs/docker/
 ```
 
@@ -42,6 +47,7 @@ $ make get-logs
 $ nix develop
 
 $ ./bootstrap.sh
+
 # Logs at ./logs/nix/
 ```
 
@@ -112,8 +118,3 @@ Thanks.
 # To-Do
 
 * Loading Terraform Cloud organization & workspace from '.env' instead of "main.tf" without the ugly hack.
-
-* Docker:
-  * fix `make dump` for logs.
-
-* Nix broken.
