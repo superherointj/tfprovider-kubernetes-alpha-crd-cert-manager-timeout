@@ -12,3 +12,6 @@ run:
 
 clean:
 	rm *.log
+
+dump:
+	docker cp `docker ps | grep timeout-demo | cut -d' ' -f1`:/workdir/tfprovider-kubernetes-alpha-crd-cert-manager-timeout/ ./dump/
