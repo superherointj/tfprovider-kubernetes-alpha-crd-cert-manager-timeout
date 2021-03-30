@@ -129,10 +129,10 @@ Thanks.
 
 # To-Do
 
-* fix make dump for logs.
+* Docker:
+  * load from .env:
+    !BROKEN! replace Terraform Cloud organization & workspace at `main.tf` to yours.
+    !BROKEN! set `linode_token` either locally as environment variable or remotely at Terraform Cloud.
+  * fix `make dump` for logs.
 
-* nix-shell: load terraform
-
-* load from .env:
-!BROKEN! replace Terraform Cloud organization & workspace at `main.tf` to yours.
-!BROKEN! set `linode_token` either locally as environment variable or remotely at Terraform Cloud.
+* Nix broken.
