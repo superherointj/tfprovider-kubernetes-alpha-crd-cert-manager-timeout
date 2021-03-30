@@ -12,6 +12,8 @@ https://github.com/superherointj/tfprovider-kubernetes-alpha-crd-cert-manager-ti
 Manually:
 
 ```
+* Terraform v0.14.8 is installed.
+
 $ git clone https://github.com/superherointj/tfprovider-kubernetes-alpha-crd-cert-manager-timeout
 
 $ cd tfprovider-kubernetes-alpha-crd-cert-manager-timeout
@@ -42,7 +44,15 @@ $ TF_LOG_PATH=tf-kubeconfig.log terraform output kubeconfig | sed -e 's/^"//' -e
 $ TF_LOG_PATH=tf-apply.log terraform apply
 ```
 
-Using Nix: (WIP - Currently broken)
+Docker:
+
+```
+$ echo TF_TOKEN=replace_with_your_terraform_token > .env
+$ make
+$ ls dump/*.logs
+```
+
+Nix: (WIP - Currently broken)
 ```
 $ nix build
 ```
