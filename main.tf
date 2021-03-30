@@ -1,8 +1,8 @@
 terraform {
   backend "remote" {
-    organization = "ethical-expert"
+    organization = var.tf_backend_remote_organization
     workspaces {
-        name = "timeout_demo_lke"
+        name = var.tf_backend_remote_workspace
     }
   }
   required_providers {

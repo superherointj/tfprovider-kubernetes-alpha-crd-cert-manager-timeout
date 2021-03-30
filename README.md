@@ -132,7 +132,7 @@ Thanks.
 * Docker:
   * load from .env:
     !BROKEN! replace Terraform Cloud organization & workspace at `main.tf` to yours.
-    !BROKEN! set `linode_token` either locally as environment variable or remotely at Terraform Cloud.
+    !BROKEN! set `linode_token` either locally at `.env` or remotely at Terraform Cloud.
     Load variable in Terraform: -var 'foo=bar'
   * fix `make dump` for logs.
 
