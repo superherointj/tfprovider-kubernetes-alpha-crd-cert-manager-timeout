@@ -108,7 +108,7 @@ Thanks.
 
 # To-Do
 
-* loading Terraform Cloud organization & workspace from '.env' instead of "main.tf".
+* Loading Terraform Cloud organization & workspace from '.env' instead of "main.tf" without the ugly hack.
 
 * Docker: fix `make dump` for logs.
 
