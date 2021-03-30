@@ -27,11 +27,8 @@
 
         #   (with terraform_0_14.withPlugins (p: [
         #   p.archive
-        #   # p.aws
         #   p.external
-        #   # p.gitlab
         #   p.Linode
-        #   # p.grafana
         #   p.helm
         #   p.kubernetes
         #   p.local

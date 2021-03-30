@@ -42,7 +42,7 @@ $ TF_LOG_PATH=tf-kubeconfig.log terraform output kubeconfig | sed -e 's/^"//' -e
 $ TF_LOG_PATH=tf-apply.log terraform apply
 ```
 
-Using Nix: (WIP)
+Using Nix: (WIP - Currently broken)
 ```
 $ nix build
 ```
