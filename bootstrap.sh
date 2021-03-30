@@ -1,5 +1,10 @@
 #!/bin/sh
 
+# Define correct log folder path.
+export LOG_FOLDER = "logs/local/"
+if grep -sq 'docker\|lxc' /proc/1/cgroup; then export LOG_FOLDER = "logs/docker/" fi
+if [[ -z $IN_NIX_SHELL ]]; export LOG_FOLDER = "logs/nix/"; fi
+
 echo "credentials \"app.terraform.io\" { token = \"$TF_TOKEN\" }" > terraform.rc
 
 # Hack to glue Organization & Workspace to main.tf without hardcoding it to file 
@@ -8,12 +13,12 @@ echo "organization = \"$TF_ORGANIZATION\"" > backend.hcl
 
 export TF_CLI_CONFIG_FILE=terraform.rc
 
-export TF_LOG=TRACE; export TF_LOG_PATH=tf-timeout-demo.log
+export TF_LOG=TRACE; export TF_LOG_PATH=${LOG_FOLDER}tf-timeout-demo.log
 
-TF_LOG_PATH=tf-init.log terraform init -backend-config=backend.hcl
+TF_LOG_PATH=${LOG_FOLDER}tf-0-init.log terraform init -backend-config=backend.hcl
 
-TF_LOG_PATH=tf-lke_cluster.log terraform apply -auto-approve -target linode_lke_cluster.timeout_demo_lke
+TF_LOG_PATH=${LOG_FOLDER}tf-1-lke_cluster.log terraform apply -auto-approve -target linode_lke_cluster.timeout_demo_lke
 
-TF_LOG_PATH=tf-kubeconfig.log terraform output kubeconfig | sed -e 's/^"//' -e 's/"$//' | base64 -d > kubeconfig.yaml
+TF_LOG_PATH=${LOG_FOLDER}tf-2-kubeconfig.log terraform output kubeconfig | sed -e 's/^"//' -e 's/"$//' | base64 -d > kubeconfig.yaml
 
-TF_LOG_PATH=tf-apply.log terraform apply -auto-approve
+TF_LOG_PATH=${LOG_FOLDER}tf-3-apply.log terraform apply -auto-approve
