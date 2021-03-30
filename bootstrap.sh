@@ -3,8 +3,8 @@
 # Define correct log folder path.
 LOG_FOLDER="logs/local/"
 
-if [ -f /.dockerenv ]; then
-  LOG_FOLDER = "logs/docker/"
+if [[ -f /.dockerenv ]]; then
+  LOG_FOLDER="logs/docker/"
 fi
 
 if [[ ! -z $IN_NIX_SHELL ]]; then
