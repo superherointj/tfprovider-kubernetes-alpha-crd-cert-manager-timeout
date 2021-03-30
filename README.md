@@ -16,28 +16,27 @@ $ cd tfprovider-kubernetes-alpha-crd-cert-manager-timeout
 $ create '.env' file to store variables. Like:
 ```
 TF_TOKEN=your_terraform_token
-linode_token=your_linode_token # As alternative can store it at Terraform Cloud.
 TF_ORGANIZATION=company # To-Be-Fixed: I don't know how I should deal with this.
 TF_WORKSPACE=workspace_name # To-Be-Fixed: I don't know how I should deal with this.
+linode_token=your_linode_token # As alternative can store it at Terraform Cloud.
 ```
 
-Manually:
+Pick method:
+
+1) Locally:
 ```
 * Install terraform v0.14.8.
 
 $ ./bootstrap.sh
 ```
 
-Docker:
+2) Docker:
 ```
 $ make
 ```
 
-Nix: (WIP - Currently broken)
+3) Nix:
 ```
-Nix is providing an environment where Terraform is installed.
-Automated execution/build is unavailable yet.
-
 $ nix develop
 
 $ ./bootstrap.sh
