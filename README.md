@@ -9,56 +9,36 @@ https://github.com/superherointj/tfprovider-kubernetes-alpha-crd-cert-manager-ti
 
 ## Steps to Reproduce
 
-Manually:
-
+$ create '.env' file to store variables. Like:
 ```
-* Terraform v0.14.8 is installed.
+TF_TOKEN=your_terraform_token
+linode_token=your_linode_token # As alternative can store it at Terraform Cloud.
+TF_ORGANIZATION=company # To-Be-Fixed: I don't know how I should deal with this.
+TF_WORKSPACE=workspace_name # To-Be-Fixed: I don't know how I should deal with this.
+```
+
+
+Manually:
+```
+* Requires terraform v0.14.8 installed.
 
 $ git clone https://github.com/superherointj/tfprovider-kubernetes-alpha-crd-cert-manager-timeout
 
 $ cd tfprovider-kubernetes-alpha-crd-cert-manager-timeout
 
-* set Terraform credentials to yours:
-    $ terraform login
-  or
-    Create file "terraform.rc":
-    --
-    credentials "app.terraform.io" {
-        token = "your_terraform_cloud_token"
-    }
-    --
-    $ export TF_CLI_CONFIG_FILE=terraform.rc
-
-* replace Terraform Cloud organization & workspace at `main.tf` to yours.
-
-* set `linode_token` either locally as environment variable or remotely at Terraform Cloud.
-
-$ export TF_LOG=TRACE; export TF_LOG_PATH=tf-timeout-demo.log
-
-$ TF_LOG_PATH=tf-init.log terraform init
-
-$ TF_LOG_PATH=tf-lke_cluster.log terraform apply -target linode_lke_cluster.timeout_demo_lke -auto-approve
-
-$ TF_LOG_PATH=tf-kubeconfig.log terraform output kubeconfig | sed -e 's/^"//' -e 's/"$//' | base64 -d > kubeconfig.yaml
-
-$ TF_LOG_PATH=tf-apply.log terraform apply -auto-approve
+$ ./bootstrap.sh
 ```
 
 Docker:
-
 ```
-$ echo TF_TOKEN=replace_with_your_terraform_token > .env
-
-!BROKEN! replace Terraform Cloud organization & workspace at `main.tf` to yours.
-!BROKEN! set `linode_token` either locally as environment variable or remotely at Terraform Cloud.
-
 $ make
-$ ls dump/*.logs
 ```
 
 Nix: (WIP - Currently broken)
 ```
-This Nix configuration is only providing an environment where Terraform is installed. Automated execution/build is not available yet.
+Nix is providing only an environment where Terraform is installed.
+Automated execution/build is not available yet.
+
 $ nix develop
 $ ... follow manual steps. 
 ```
@@ -129,11 +109,8 @@ Thanks.
 
 # To-Do
 
-* Docker:
-  * load from .env:
-    !BROKEN! replace Terraform Cloud organization & workspace at `main.tf` to yours.
-    !BROKEN! set `linode_token` either locally at `.env` or remotely at Terraform Cloud.
-    Load variable in Terraform: -var 'foo=bar'
-  * fix `make dump` for logs.
+* loading Terraform Cloud organization & workspace from '.env' instead of "main.tf".
+
+* Docker: fix `make dump` for logs.
 
 * Nix broken.
