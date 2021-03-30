@@ -37,11 +37,11 @@ $ export TF_LOG=TRACE; export TF_LOG_PATH=tf-timeout-demo.log
 
 $ TF_LOG_PATH=tf-init.log terraform init
 
-$ TF_LOG_PATH=tf-lke_cluster.log terraform apply -target linode_lke_cluster.timeout_demo_lke
+$ TF_LOG_PATH=tf-lke_cluster.log terraform apply -target linode_lke_cluster.timeout_demo_lke -auto-approve
 
 $ TF_LOG_PATH=tf-kubeconfig.log terraform output kubeconfig | sed -e 's/^"//' -e 's/"$//' | base64 -d > kubeconfig.yaml
 
-$ TF_LOG_PATH=tf-apply.log terraform apply
+$ TF_LOG_PATH=tf-apply.log terraform apply -auto-approve
 ```
 
 Docker:
@@ -133,6 +133,7 @@ Thanks.
   * load from .env:
     !BROKEN! replace Terraform Cloud organization & workspace at `main.tf` to yours.
     !BROKEN! set `linode_token` either locally as environment variable or remotely at Terraform Cloud.
+    Load variable in Terraform: -var 'foo=bar'
   * fix `make dump` for logs.
 
 * Nix broken.
