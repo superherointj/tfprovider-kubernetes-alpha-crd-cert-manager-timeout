@@ -9,6 +9,10 @@ https://github.com/superherointj/tfprovider-kubernetes-alpha-crd-cert-manager-ti
 
 ## Steps to Reproduce
 
+$ git clone https://github.com/superherointj/tfprovider-kubernetes-alpha-crd-cert-manager-timeout
+
+$ cd tfprovider-kubernetes-alpha-crd-cert-manager-timeout
+
 $ create '.env' file to store variables. Like:
 ```
 TF_TOKEN=your_terraform_token
@@ -17,14 +21,9 @@ TF_ORGANIZATION=company # To-Be-Fixed: I don't know how I should deal with this.
 TF_WORKSPACE=workspace_name # To-Be-Fixed: I don't know how I should deal with this.
 ```
 
-
 Manually:
 ```
-* Requires terraform v0.14.8 installed.
-
-$ git clone https://github.com/superherointj/tfprovider-kubernetes-alpha-crd-cert-manager-timeout
-
-$ cd tfprovider-kubernetes-alpha-crd-cert-manager-timeout
+* Install terraform v0.14.8.
 
 $ ./bootstrap.sh
 ```
@@ -36,11 +35,12 @@ $ make
 
 Nix: (WIP - Currently broken)
 ```
-Nix is providing only an environment where Terraform is installed.
-Automated execution/build is not available yet.
+Nix is providing an environment where Terraform is installed.
+Automated execution/build is unavailable yet.
 
 $ nix develop
-$ ... follow manual steps. 
+
+$ ./bootstrap.sh
 ```
 
 ## After some minutes...
