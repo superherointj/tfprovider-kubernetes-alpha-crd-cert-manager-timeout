@@ -48,6 +48,10 @@ Docker:
 
 ```
 $ echo TF_TOKEN=replace_with_your_terraform_token > .env
+
+!BROKEN! replace Terraform Cloud organization & workspace at `main.tf` to yours.
+!BROKEN! set `linode_token` either locally as environment variable or remotely at Terraform Cloud.
+
 $ make
 $ ls dump/*.logs
 ```
@@ -119,3 +123,12 @@ https://registry.terraform.io/modules/aareet/cert-manager/kubernetes/latest
 
 --
 Thanks.
+
+
+# To-Do
+
+* nix-shell: load terraform
+
+* load from .env:
+!BROKEN! replace Terraform Cloud organization & workspace at `main.tf` to yours.
+!BROKEN! set `linode_token` either locally as environment variable or remotely at Terraform Cloud.

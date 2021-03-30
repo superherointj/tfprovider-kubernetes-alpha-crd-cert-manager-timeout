@@ -1,6 +1,5 @@
 .terraform*
 _*
 kubeconfig.yaml
-logs
 terraform.rc
 .env
