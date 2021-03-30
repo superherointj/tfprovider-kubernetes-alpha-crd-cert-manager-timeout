@@ -3,7 +3,7 @@
 # Define correct log folder path.
 LOG_FOLDER="logs/local/"
 
-$(grep -sq 'docker\|lxc' /proc/1/ cgroup) && LOG_FOLDER = "logs/docker/"
+# grep -sq 'docker\|lxc' /proc/1/ cgroup && LOG_FOLDER = "logs/docker/"
 
 if [[ ! -z $IN_NIX_SHELL ]]; then
   LOG_FOLDER="logs/nix/"
