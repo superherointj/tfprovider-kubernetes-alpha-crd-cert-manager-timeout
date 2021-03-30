@@ -110,7 +110,6 @@ Thanks.
 * Loading Terraform Cloud organization & workspace from '.env' instead of "main.tf" without the ugly hack.
 
 * Docker:
-  * fix log folder for docker.
   * fix `make dump` for logs.
 
 * Nix broken.
