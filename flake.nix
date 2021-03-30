@@ -14,21 +14,20 @@
         buildInputs = with pkgs; [ terraform_0_14 ];
       };
 
-      defaultPackage.x86_64-linux =
-        with pkgs;
+      defaultPackage.x86_64-linux = with pkgs;
         stdenv.mkDerivation {
           name = "tf-kubernetes-alpha-cert-manager-timeout-demo";
           src = self;
 
-          buildInputs = 
-            let terraformPlugins = terraform_0_14.withPlugins (tp: with tp; [
-                linode
-                helm
-                kubernetes
-                kubernetes-alpha
-                # cert-manager 
-              ]); in
-             [ terraformPlugins ];
+          buildInputs = with pkgs; [ terraform_0_14 ];
+          # let terraformPlugins = terraform_0_14.withPlugins (tp: with tp; [
+          #     linode
+          #     helm
+          #     kubernetes
+          #     kubernetes-alpha
+          #     # cert-manager 
+          #   ]); in
+          #  [ terraformPlugins ];
 
           # terraform_0_14.withPlugins (tp: [ tp.digitalocean ]);
           #   (with terraform_0_14.withPlugins (p: [
