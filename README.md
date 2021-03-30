@@ -8,12 +8,24 @@ Attempting to install aareet/cert-manager module using Kubernetes-Alpha times ou
 https://github.com/superherointj/tfprovider-kubernetes-alpha-crd-cert-manager-timeout
 
 ## Steps to Reproduce
+
+Manually:
+
 ```
 $ git clone https://github.com/superherointj/tfprovider-kubernetes-alpha-crd-cert-manager-timeout
 
 $ cd tfprovider-kubernetes-alpha-crd-cert-manager-timeout
 
-* set Terraform credentials token for CLI tool.
+* set Terraform credentials to yours:
+    $ terraform login
+  or
+    Create file "terraform.rc":
+    --
+    credentials "app.terraform.io" {
+        token = "your_terraform_cloud_token"
+    }
+    --
+    $ export TF_CLI_CONFIG_FILE=terraform.rc
 
 * replace Terraform Cloud organization & workspace at `main.tf` to yours.
 
@@ -28,6 +40,11 @@ $ TF_LOG_PATH=tf-lke_cluster.log terraform apply -target linode_lke_cluster.time
 $ TF_LOG_PATH=tf-kubeconfig.log terraform output kubeconfig | sed -e 's/^"//' -e 's/"$//' | base64 -d > kubeconfig.yaml
 
 $ TF_LOG_PATH=tf-apply.log terraform apply
+```
+
+Using Nix: (WIP)
+```
+$ nix build
 ```
 
 ## After some minutes...

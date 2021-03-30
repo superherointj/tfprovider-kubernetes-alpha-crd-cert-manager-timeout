@@ -2,3 +2,5 @@
 _*
 kubeconfig.yaml
 logs
+terraform.rc
+.env

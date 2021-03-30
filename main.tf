@@ -1,9 +1,9 @@
 terraform {
   backend "remote" {
-      organization = "ethical-expert"
-      workspaces {
-          name = "timeout_demo_lke"
-      }
+    organization = "ethical-expert"
+    workspaces {
+        name = "timeout_demo_lke"
+    }
   }
   required_providers {
     linode = {
