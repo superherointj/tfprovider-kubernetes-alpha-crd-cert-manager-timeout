@@ -11,6 +11,8 @@ fi
 
 # echo $LOG_FOLDER
 
+mkdir -p $LOG_FOLDER
+
 echo "credentials \"app.terraform.io\" { token = \"$TF_TOKEN\" }" > terraform.rc
 
 # Hack to glue Organization & Workspace to main.tf without hardcoding it to file 
