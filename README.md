@@ -16,9 +16,9 @@ $ cd tfprovider-kubernetes-alpha-crd-cert-manager-timeout
 $ create '.env' file to store variables. Like:
 ```
 TF_TOKEN=your_terraform_token
-TF_ORGANIZATION=company # To-Be-Fixed: I don't know how I should deal with this.
-TF_WORKSPACE=workspace_name # To-Be-Fixed: I don't know how I should deal with this.
-linode_token=your_linode_token # As alternative can store it at Terraform Cloud.
+TF_ORGANIZATION=company
+TF_WORKSPACE=workspace_name 
+linode_token=your_linode_token
 ```
 
 Pick method:
