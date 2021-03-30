@@ -6,7 +6,7 @@ WORKDIR /workdir/tfprovider-kubernetes-alpha-crd-cert-manager-timeout
 
 RUN chmod +x /workdir/bootstrap.sh
 
-CMD /workdir/bootstrap.sh $@
+CMD /workdir/tfprovider-kubernetes-alpha-crd-cert-manager-timeout/bootstrap.sh $@
 
 # ENV TF_TOKEN=$TF_TOKEN
 
