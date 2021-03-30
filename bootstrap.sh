@@ -4,7 +4,7 @@
 LOG_FOLDER="logs/local/"
 
 if [ -f /.dockerenv ]; then
-    export LOG_FOLDER = "logs/docker/"
+  LOG_FOLDER = "logs/docker/"
 fi
 
 if [[ ! -z $IN_NIX_SHELL ]]; then
