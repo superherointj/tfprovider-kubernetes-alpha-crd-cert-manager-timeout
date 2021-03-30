@@ -1,4 +1,4 @@
-DEFAULT: base demo run dump
+DEFAULT: base demo run #dump
 
 demo:
 	docker build --no-cache -t timeout-demo .
