@@ -17,7 +17,6 @@ $ create '.env' file to store variables. Like:
 ```
 TF_TOKEN=your_terraform_token
 TF_ORGANIZATION=company
-TF_WORKSPACE=workspace_name 
 linode_token=your_linode_token
 ```
 

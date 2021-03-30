@@ -1,5 +1,10 @@
 terraform {
-  backend "remote" {}
+  backend "remote" {
+    hostname = "app.terraform.io"
+    workspaces {
+      name = "timeout_demo_lke"
+    }
+  }
   required_providers {
     linode = {
       source  = "linode/linode"

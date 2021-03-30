@@ -4,10 +4,7 @@ echo "credentials \"app.terraform.io\" { token = \"$TF_TOKEN\" }" >> terraform.r
 
 # Hack to glue Organization & Workspace to main.tf without hardcoding it to file 
 #  (that is a problem to Docker that downloads sources from git repo).
-echo "workspaces { name = \"$TF_WORKSPACE\" }
-hostname     = \"app.terraform.io\"
-organization = \"$TF_ORGANIZATION\"
-" > backend.hcl
+echo "organization = \"$TF_ORGANIZATION\"" > backend.hcl
 
 export TF_CLI_CONFIG_FILE=terraform.rc
 
