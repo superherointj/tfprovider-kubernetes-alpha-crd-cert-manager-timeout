@@ -1,0 +1,101 @@
+2021/03/30 17:22:56 [INFO] Terraform version: 0.14.9  
+2021/03/30 17:22:56 [INFO] Go runtime version: go1.16.2
+2021/03/30 17:22:56 [INFO] CLI args: []string{"/usr/bin/terraform", "init", "-backend-config=backend.hcl"}
+2021/03/30 17:22:56 [DEBUG] Attempting to open CLI config file: terraform.rc
+2021/03/30 17:22:56 Loading CLI configuration from terraform.rc
+2021/03/30 17:22:56 [DEBUG] Not reading CLI config directory because config location is overridden by environment variable
+2021/03/30 17:22:56 [DEBUG] ignoring non-existing provider search directory terraform.d/plugins
+2021/03/30 17:22:56 [DEBUG] ignoring non-existing provider search directory /root/.terraform.d/plugins
+2021/03/30 17:22:56 [DEBUG] ignoring non-existing provider search directory /root/.local/share/terraform/plugins
+2021/03/30 17:22:56 [DEBUG] ignoring non-existing provider search directory /usr/local/share/terraform/plugins
+2021/03/30 17:22:56 [DEBUG] ignoring non-existing provider search directory /usr/share/terraform/plugins
+2021/03/30 17:22:56 [INFO] CLI command args: []string{"init", "-backend-config=backend.hcl"}
+2021/03/30 17:22:56 [TRACE] ModuleInstaller: installing child modules for . into .terraform/modules
+2021/03/30 17:22:56 [DEBUG] Module installer: begin cert-manager
+2021/03/30 17:22:56 [TRACE] ModuleInstaller: cert-manager is not yet installed
+2021/03/30 17:22:56 [TRACE] ModuleInstaller: cleaning directory .terraform/modules/cert-manager prior to install of cert-manager
+2021/03/30 17:22:56 [TRACE] ModuleInstaller: cert-manager is a registry module at aareet/cert-manager/kubernetes
+2021/03/30 17:22:56 [DEBUG] cert-manager listing available versions of aareet/cert-manager/kubernetes at registry.terraform.io
+2021/03/30 17:22:56 [DEBUG] Service discovery for registry.terraform.io at https://registry.terraform.io/.well-known/terraform.json
+2021/03/30 17:22:56 [TRACE] HTTP client GET request to https://registry.terraform.io/.well-known/terraform.json
+2021/03/30 17:22:56 [DEBUG] GET https://registry.terraform.io/v1/modules/aareet/cert-manager/kubernetes/versions
+2021/03/30 17:22:56 [DEBUG] fetching module versions from "https://registry.terraform.io/v1/modules/aareet/cert-manager/kubernetes/versions"
+2021/03/30 17:22:56 [TRACE] HTTP client GET request to https://registry.terraform.io/v1/modules/aareet/cert-manager/kubernetes/versions
+2021/03/30 17:22:56 [DEBUG] found available version "0.0.2" for aareet/cert-manager/kubernetes
+2021/03/30 17:22:56 [DEBUG] found available version "0.0.1" for aareet/cert-manager/kubernetes
+2021/03/30 17:22:56 [DEBUG] GET https://registry.terraform.io/v1/modules/aareet/cert-manager/kubernetes/0.0.2/download
+2021/03/30 17:22:56 [DEBUG] looking up module location from "https://registry.terraform.io/v1/modules/aareet/cert-manager/kubernetes/0.0.2/download"
+2021/03/30 17:22:56 [TRACE] HTTP client GET request to https://registry.terraform.io/v1/modules/aareet/cert-manager/kubernetes/0.0.2/download
+2021/03/30 17:22:56 [TRACE] ModuleInstaller: cert-manager aareet/cert-manager/kubernetes 0.0.2 is available at "git::https://github.com/aareet/terraform-kubernetes-cert-manager?ref=v0.0.2"
+2021/03/30 17:22:56 [DEBUG] will download "git::https://github.com/aareet/terraform-kubernetes-cert-manager?ref=v0.0.2" to .terraform/modules/cert-manager
+2021/03/30 17:22:56 [TRACE] fetching "git::https://github.com/aareet/terraform-kubernetes-cert-manager?ref=v0.0.2" to ".terraform/modules/cert-manager"
+2021/03/30 17:22:57 [TRACE] ModuleInstaller: cert-manager "git::https://github.com/aareet/terraform-kubernetes-cert-manager?ref=v0.0.2" was downloaded to .terraform/modules/cert-manager
+2021/03/30 17:22:57 [TRACE] ModuleInstaller: cert-manager should now be at .terraform/modules/cert-manager
+2021/03/30 17:22:58 [DEBUG] Module installer: cert-manager installed at .terraform/modules/cert-manager
+2021/03/30 17:22:58 [TRACE] modsdir: writing modules manifest to .terraform/modules/modules.json
+2021/03/30 17:22:58 [TRACE] Meta.Backend: merging -backend-config=... CLI overrides into backend configuration
+2021/03/30 17:22:58 [TRACE] Meta.Backend: built configuration for "remote" backend with hash value 2846902808
+2021/03/30 17:22:58 [TRACE] Meta.Backend: backend has not previously been initialized in this working directory
+2021/03/30 17:22:58 [DEBUG] New state was assigned lineage "89cd345f-7cd2-cb4a-0ebe-f3858ea4ee81"
+2021/03/30 17:22:58 [TRACE] Meta.Backend: moving from default local state only to "remote" backend
+2021/03/30 17:22:58 [DEBUG] Service discovery for app.terraform.io at https://app.terraform.io/.well-known/terraform.json
+2021/03/30 17:22:58 [TRACE] HTTP client GET request to https://app.terraform.io/.well-known/terraform.json
+2021/03/30 17:22:58 [DEBUG] Retrieve version constraints for service tfe.v2.1 and product terraform
+2021/03/30 17:22:58 [TRACE] HTTP client GET request to https://checkpoint-api.hashicorp.com/v1/versions/tfe.v2.1?product=terraform
+2021/03/30 17:23:00 [DEBUG] checking for provisioner in "."
+2021/03/30 17:23:00 [DEBUG] checking for provisioner in "/usr/bin"
+2021/03/30 17:23:00 [INFO] Failed to read plugin lock file .terraform/plugins/linux_amd64/lock.json: open .terraform/plugins/linux_amd64/lock.json: no such file or directory
+2021/03/30 17:23:00 [TRACE] backend/local: state manager for workspace "default" will:
+ - read initial snapshot from terraform.tfstate
+ - write new snapshots to terraform.tfstate
+ - create any backup at terraform.tfstate.backup
+2021/03/30 17:23:00 [TRACE] statemgr.Filesystem: reading initial snapshot from terraform.tfstate
+2021/03/30 17:23:00 [TRACE] statemgr.Filesystem: snapshot file has nil snapshot, but that's okay
+2021/03/30 17:23:00 [TRACE] statemgr.Filesystem: read nil snapshot
+2021/03/30 17:23:00 [TRACE] Meta.Backend: ignoring local "default" workspace because its state is empty
+2021/03/30 17:23:00 [DEBUG] New state was assigned lineage "8c6c7720-d380-e647-6c8d-9439a4fb30ec"
+2021/03/30 17:23:00 [TRACE] Preserving existing state lineage "8c6c7720-d380-e647-6c8d-9439a4fb30ec"
+2021/03/30 17:23:00 [TRACE] Meta.Backend: instantiated backend of type *remote.Remote
+2021/03/30 17:23:00 [DEBUG] checking for provisioner in "."
+2021/03/30 17:23:00 [DEBUG] checking for provisioner in "/usr/bin"
+2021/03/30 17:23:00 [INFO] Failed to read plugin lock file .terraform/plugins/linux_amd64/lock.json: open .terraform/plugins/linux_amd64/lock.json: no such file or directory
+2021/03/30 17:23:00 [TRACE] Meta.Backend: backend *remote.Remote supports operations
+2021/03/30 17:23:01 [DEBUG] GET https://registry.terraform.io/v1/providers/hashicorp/kubernetes-alpha/versions
+2021/03/30 17:23:01 [TRACE] HTTP client GET request to https://registry.terraform.io/v1/providers/hashicorp/kubernetes-alpha/versions
+2021/03/30 17:23:01 [DEBUG] GET https://registry.terraform.io/v1/providers/linode/linode/versions
+2021/03/30 17:23:01 [TRACE] HTTP client GET request to https://registry.terraform.io/v1/providers/linode/linode/versions
+2021/03/30 17:23:01 [TRACE] providercache.fillMetaCache: scanning directory .terraform/providers
+2021/03/30 17:23:01 [TRACE] getproviders.SearchLocalDirectory: failed to resolve symlinks for .terraform/providers: lstat .terraform/providers: no such file or directory
+2021/03/30 17:23:01 [TRACE] providercache.fillMetaCache: error while scanning directory .terraform/providers: cannot search .terraform/providers: lstat .terraform/providers: no such file or directory
+2021/03/30 17:23:01 [DEBUG] GET https://registry.terraform.io/v1/providers/hashicorp/kubernetes-alpha/0.3.2/download/linux/amd64
+2021/03/30 17:23:01 [TRACE] HTTP client GET request to https://registry.terraform.io/v1/providers/hashicorp/kubernetes-alpha/0.3.2/download/linux/amd64
+2021/03/30 17:23:01 [DEBUG] GET https://releases.hashicorp.com/terraform-provider-kubernetes-alpha/0.3.2/terraform-provider-kubernetes-alpha_0.3.2_SHA256SUMS
+2021/03/30 17:23:01 [TRACE] HTTP client GET request to https://releases.hashicorp.com/terraform-provider-kubernetes-alpha/0.3.2/terraform-provider-kubernetes-alpha_0.3.2_SHA256SUMS
+2021/03/30 17:23:02 [DEBUG] GET https://releases.hashicorp.com/terraform-provider-kubernetes-alpha/0.3.2/terraform-provider-kubernetes-alpha_0.3.2_SHA256SUMS.sig
+2021/03/30 17:23:02 [TRACE] HTTP client GET request to https://releases.hashicorp.com/terraform-provider-kubernetes-alpha/0.3.2/terraform-provider-kubernetes-alpha_0.3.2_SHA256SUMS.sig
+2021/03/30 17:23:02 [TRACE] providercache.Dir.InstallPackage: installing registry.terraform.io/hashicorp/kubernetes-alpha v0.3.2 from https://releases.hashicorp.com/terraform-provider-kubernetes-alpha/0.3.2/terraform-provider-kubernetes-alpha_0.3.2_linux_amd64.zip
+2021/03/30 17:23:02 [TRACE] HTTP client GET request to https://releases.hashicorp.com/terraform-provider-kubernetes-alpha/0.3.2/terraform-provider-kubernetes-alpha_0.3.2_linux_amd64.zip
+2021/03/30 17:23:02 [DEBUG] Provider signed by 51852D87348FFC4C HashiCorp Security <security@hashicorp.com>
+2021/03/30 17:23:02 [TRACE] providercache.fillMetaCache: scanning directory .terraform/providers
+2021/03/30 17:23:02 [TRACE] getproviders.SearchLocalDirectory: .terraform/providers is a symlink to .terraform/providers
+2021/03/30 17:23:02 [TRACE] getproviders.SearchLocalDirectory: found registry.terraform.io/hashicorp/kubernetes-alpha v0.3.2 for linux_amd64 at .terraform/providers/registry.terraform.io/hashicorp/kubernetes-alpha/0.3.2/linux_amd64
+2021/03/30 17:23:02 [TRACE] providercache.fillMetaCache: including .terraform/providers/registry.terraform.io/hashicorp/kubernetes-alpha/0.3.2/linux_amd64 as a candidate package for registry.terraform.io/hashicorp/kubernetes-alpha 0.3.2
+2021/03/30 17:23:02 [TRACE] providercache.fillMetaCache: using cached result from previous scan of .terraform/providers
+2021/03/30 17:23:02 [DEBUG] GET https://registry.terraform.io/v1/providers/linode/linode/1.16.0/download/linux/amd64
+2021/03/30 17:23:02 [TRACE] HTTP client GET request to https://registry.terraform.io/v1/providers/linode/linode/1.16.0/download/linux/amd64
+2021/03/30 17:23:02 [DEBUG] GET https://github.com/linode/terraform-provider-linode/releases/download/v1.16.0/terraform-provider-linode_1.16.0_SHA256SUMS
+2021/03/30 17:23:02 [TRACE] HTTP client GET request to https://github.com/linode/terraform-provider-linode/releases/download/v1.16.0/terraform-provider-linode_1.16.0_SHA256SUMS
+2021/03/30 17:23:03 [TRACE] HTTP client GET request to https://github-releases.githubusercontent.com/153338661/57c44180-827b-11eb-82ef-11457773a90f?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20210330%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210330T172303Z&X-Amz-Expires=300&X-Amz-Signature=40ee177162341f646c60ea85321bceecf26e079345697b9788f5c40040efa8ee&X-Amz-SignedHeaders=host&actor_id=0&key_id=0&repo_id=153338661&response-content-disposition=attachment%3B%20filename%3Dterraform-provider-linode_1.16.0_SHA256SUMS&response-content-type=application%2Foctet-stream
+2021/03/30 17:23:03 [DEBUG] GET https://github.com/linode/terraform-provider-linode/releases/download/v1.16.0/terraform-provider-linode_1.16.0_SHA256SUMS.sig
+2021/03/30 17:23:03 [TRACE] HTTP client GET request to https://github.com/linode/terraform-provider-linode/releases/download/v1.16.0/terraform-provider-linode_1.16.0_SHA256SUMS.sig
+2021/03/30 17:23:03 [TRACE] HTTP client GET request to https://github-releases.githubusercontent.com/153338661/54c95100-827b-11eb-81f3-cfef1be31142?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20210330%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210330T172303Z&X-Amz-Expires=300&X-Amz-Signature=0482778d32a88455eebb2e81c4103b91a76630756344817897e37d2f8c02b97d&X-Amz-SignedHeaders=host&actor_id=0&key_id=0&repo_id=153338661&response-content-disposition=attachment%3B%20filename%3Dterraform-provider-linode_1.16.0_SHA256SUMS.sig&response-content-type=application%2Foctet-stream
+2021/03/30 17:23:03 [TRACE] providercache.Dir.InstallPackage: installing registry.terraform.io/linode/linode v1.16.0 from https://github.com/linode/terraform-provider-linode/releases/download/v1.16.0/terraform-provider-linode_1.16.0_linux_amd64.zip
+2021/03/30 17:23:03 [TRACE] HTTP client GET request to https://github.com/linode/terraform-provider-linode/releases/download/v1.16.0/terraform-provider-linode_1.16.0_linux_amd64.zip
+2021/03/30 17:23:04 [TRACE] HTTP client GET request to https://github-releases.githubusercontent.com/153338661/55fa7e00-827b-11eb-918c-b80a40b9e3dd?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20210330%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210330T172220Z&X-Amz-Expires=300&X-Amz-Signature=53c1126076d2b93234898ec2554d6d095ba47cd2eb920a3d4265103f2d3bd1a3&X-Amz-SignedHeaders=host&actor_id=0&key_id=0&repo_id=153338661&response-content-disposition=attachment%3B%20filename%3Dterraform-provider-linode_1.16.0_linux_amd64.zip&response-content-type=application%2Foctet-stream
+2021/03/30 17:23:05 [DEBUG] Provider signed by F4E6BBD0EA4FE463 Phillip Campbell <dev-dx@linode.com>
+2021/03/30 17:23:05 [TRACE] providercache.fillMetaCache: scanning directory .terraform/providers
+2021/03/30 17:23:05 [TRACE] getproviders.SearchLocalDirectory: .terraform/providers is a symlink to .terraform/providers
+2021/03/30 17:23:05 [TRACE] getproviders.SearchLocalDirectory: found registry.terraform.io/hashicorp/kubernetes-alpha v0.3.2 for linux_amd64 at .terraform/providers/registry.terraform.io/hashicorp/kubernetes-alpha/0.3.2/linux_amd64
+2021/03/30 17:23:05 [TRACE] getproviders.SearchLocalDirectory: found registry.terraform.io/linode/linode v1.16.0 for linux_amd64 at .terraform/providers/registry.terraform.io/linode/linode/1.16.0/linux_amd64
+2021/03/30 17:23:05 [TRACE] providercache.fillMetaCache: including .terraform/providers/registry.terraform.io/hashicorp/kubernetes-alpha/0.3.2/linux_amd64 as a candidate package for registry.terraform.io/hashicorp/kubernetes-alpha 0.3.2
+2021/03/30 17:23:05 [TRACE] providercache.fillMetaCache: including .terraform/providers/registry.terraform.io/linode/linode/1.16.0/linux_amd64 as a candidate package for registry.terraform.io/linode/linode 1.16.0

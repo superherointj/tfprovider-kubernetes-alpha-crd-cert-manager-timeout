@@ -1,4 +1,4 @@
-DEFAULT: base demo run logs
+DEFAULT: base demo run get-logs
 
 base:
 	docker build --no-cache -t archbase -f Dockerfile.archbase .
@@ -9,8 +9,9 @@ demo:
 run:
 	docker run -it --env-file .env timeout-demo
 
-logs:
-	mkdir -p logs/docker/; docker cp $(docker ps -a -n1 | grep timeout-demo | cut -d' ' -f1):/workdir/tfprovider-kubernetes-alpha-crd-cert-manager-timeout/logs/docker/ ./logs/docker/
+get-logs:
+	mkdir -p logs
+	docker ps -a -n1 | grep timeout-demo | cut -d' ' -f1 | xargs -I {} docker cp {}:/workdir/tfprovider-kubernetes-alpha-crd-cert-manager-timeout/logs/docker/ ./logs/
 
 clean:
 	rm -rf *.log logs

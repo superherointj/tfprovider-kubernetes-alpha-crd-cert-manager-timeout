@@ -27,11 +27,14 @@ Pick method:
 * Install terraform v0.14.8.
 
 $ ./bootstrap.sh
+# Logs at ./logs/local/
 ```
 
 2) Docker:
 ```
 $ make
+$ make get-logs
+# Logs at ./logs/docker/
 ```
 
 3) Nix:
@@ -39,6 +42,7 @@ $ make
 $ nix develop
 
 $ ./bootstrap.sh
+# Logs at ./logs/nix/
 ```
 
 ## After some minutes...
