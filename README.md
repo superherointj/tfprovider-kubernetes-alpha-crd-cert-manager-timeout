@@ -58,7 +58,8 @@ $ ls dump/*.logs
 
 Nix: (WIP - Currently broken)
 ```
-$ nix build
+$ nix develop
+$ ... follow manual steps. This Nix configuration is only providing an environment where Terraform is installed. Automated build is not available yet.
 ```
 
 ## After some minutes...
@@ -126,6 +127,8 @@ Thanks.
 
 
 # To-Do
+
+* fix make dump for logs.
 
 * nix-shell: load terraform
 
