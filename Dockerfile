@@ -4,9 +4,9 @@ RUN git clone https://github.com/superherointj/tfprovider-kubernetes-alpha-crd-c
 
 WORKDIR /workdir/tfprovider-kubernetes-alpha-crd-cert-manager-timeout
 
-RUN chmod +x /workdir/bootstrap.sh
+RUN chmod +x bootstrap.sh
 
-CMD /workdir/tfprovider-kubernetes-alpha-crd-cert-manager-timeout/bootstrap.sh $@
+CMD bootstrap.sh $@
 
 # ENV TF_TOKEN=$TF_TOKEN
 
