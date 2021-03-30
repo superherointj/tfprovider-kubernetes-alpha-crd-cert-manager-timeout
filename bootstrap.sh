@@ -2,6 +2,27 @@
 
 echo "credentials \"app.terraform.io\" { token = \"$TF_TOKEN\" }" >> terraform.rc
 
+# Ugly hack to glue Organization & Workspace to main.tf without hardcoding it to file 
+#  (that is a problem to Docker that downloads sources from git repo).
+#    I ask forgiveness for my ignorance of method of how I should be doing this!
+echo "terraform {
+  backend \"remote\" {
+    organization = \"$TF_ORGANIZATION\"
+    workspaces {
+        name = \"$TF_WORKSPACE\"
+    }
+  }
+  required_providers {
+    linode = {
+      source  = \"linode/linode\"
+    }
+    kubernetes-alpha = {
+      source = \"hashicorp/kubernetes-alpha\"
+      version = \">= 0.3.2\"
+    }
+  }
+}"  > main.tf;
+
 export TF_CLI_CONFIG_FILE=terraform.rc
 
 export TF_LOG=TRACE; export TF_LOG_PATH=tf-timeout-demo.log

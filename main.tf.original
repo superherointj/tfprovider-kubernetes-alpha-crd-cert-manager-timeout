@@ -1,6 +1,6 @@
 terraform {
   backend "remote" {
-    organization = "ethical-expert"
+    organization = "company"
     workspaces {
         name = "timeout_demo_lke"
     }
